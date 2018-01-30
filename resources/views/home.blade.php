@@ -49,8 +49,15 @@
                                 <tr>
                                     <td>{{$user->name}}</td>
                                     <td>{{$user->email}}</td>
-                                    <td>{{$user->status}}</td>
-                                
+                                    <td>
+                                        @if ($user->status == 1)
+                                            <i class='fa fa-check' style='color: green;'></i>
+
+                                        @else
+                                            <i class='fa fa-times' style='color: red;'></i>
+                                        @endif
+                                    </td>
+
                                 </tr>
                             @endforeach
 
