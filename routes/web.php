@@ -18,3 +18,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::delete('delete/{id}', 'UserController@delete');
+
+
+Route::group(['prefix' => 'posts'], function() {
+    Route::get('/', 'PostController@index');
+    Route::match(['get', 'post'], 'create', 'PostController@create');
+    Route::match(['get', 'put'], 'update/{id}', 'PostController@update');
+    Route::get('show/{id}', 'PostController@show');
+    Route::delete('delete/{id}', 'PostController@destroy');
+});
+

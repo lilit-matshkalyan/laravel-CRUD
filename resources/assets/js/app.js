@@ -8,6 +8,7 @@
 require('./bootstrap');
 require('./jquery.dataTables.min');
 require('./jquery-1.12.4');
+require('./ajaxcrud');
 
 window.Vue = require('vue');
 

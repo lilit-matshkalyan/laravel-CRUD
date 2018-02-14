@@ -27,14 +27,17 @@
                                 <th>Name</th>
                                 <th>E-mail</th>
                                 <th>Status</th>
+                                <th>CRUD</th>
 
                             </tr>
                             </thead>
                             <tfoot>
                             <tr>
+                                <th>id</th>
                                 <th>Name</th>
                                 <th>Position</th>
                                 <th>Office</th>
+                                <th>CRUD</th>
                             </tr>
                             </tfoot>
                             <tbody>
@@ -47,6 +50,7 @@
 
                             @foreach($users as $user)
                                 <tr>
+                                    <td>{{$user->id}}</td>
                                     <td>{{$user->name}}</td>
                                     <td>{{$user->email}}</td>
                                     <td>
@@ -56,6 +60,15 @@
                                         @else
                                             <i class='fa fa-times' style='color: red;'></i>
                                         @endif
+                                    </td>
+                                    <td>
+                                        <form method="delete" action="delete/$user->id">
+
+
+                                            <input class="btn btn-danger" type="submit" name="delete" value="Delete" > <!-- onclick="alert('Are you sure?')" -->
+
+
+                                        </form>
                                     </td>
 
                                 </tr>
